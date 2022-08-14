@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.sniklz.firstmod.block.ModBlocks;
 import net.sniklz.firstmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -18,13 +19,14 @@ public class FirstMod
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-
     public FirstMod()
     {
         // Register the setup method for modloading
         IEventBus eventBus =  FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.registerItems(eventBus);
+        ModBlocks.registerBlocks(eventBus);
+
 
         eventBus.addListener(this::setup);
 
