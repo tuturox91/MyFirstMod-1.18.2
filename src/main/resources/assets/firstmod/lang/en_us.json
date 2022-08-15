@@ -1,5 +1,8 @@
 {
   "item.firstmod.vapatite": "Vapatite",
 
-  "block.firstmod.vapatite_block": "Compressed Vapatit"
+  "block.firstmod.vapatite_block": "Compressed Vapatit",
+  "block.firstmod.vapatite_ore": "Vapatite Ore",
+
+  "itemGroup.firstmodtab": "Vapatite Mod"
 }

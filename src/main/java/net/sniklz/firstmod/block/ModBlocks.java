@@ -12,29 +12,24 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sniklz.firstmod.FirstMod;
 import net.sniklz.firstmod.item.ModItems;
+import net.sniklz.firstmod.modRegistries.BlockRegister;
+import net.sniklz.firstmod.modRegistries.ItemRegister;
+import net.sniklz.firstmod.modRegistries.ModCreativeModeTab;
 
 import java.util.function.Supplier;
 
 public class ModBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, FirstMod.MOD_ID);
-
-    public static final RegistryObject<Block> VAPATITE_BLOCK = registerBlock("vapatite_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(9f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_FOOD);
 
 
+    public static final RegistryObject<Block> VAPATITE_BLOCK = BlockRegister.registerBlock("vapatite_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.FIRSTMOD_TAB);
+
+    public static final RegistryObject<Block> VAPATITE_ORE = BlockRegister.registerBlock("vapatite_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.FIRSTMOD_TAB);
 
 
-    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn ,tab);
-        return  toReturn;
-    }
-
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
-        return ModItems.ITEMS.register(name, ()-> new BlockItem(block.get(), new Item.Properties().tab(tab)));
-    }
 
     public static void registerBlocks(IEventBus eventBus) {
-        BLOCKS.register(eventBus);
+        BlockRegister.BLOCKS.register(eventBus);
     }
 }

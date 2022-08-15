@@ -1,5 +1,8 @@
 {
   "item.firstmod.vapatite": "Вапатит",
 
-  "block.firstmod.vapatite_block": "Скопмпрессированный Вапатит"
+  "block.firstmod.vapatite_block": "Скопмпрессированный Вапатит",
+  "block.firstmod.vapatite_ore": "Вапатитовая Руда",
+
+  "itemGroup.firstmodtab": "Вапатит Мод"
 }
