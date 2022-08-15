@@ -1,0 +1,10 @@
+{
+  "prawda_vika": {
+    "sounds": [
+      {
+        "name": "firstmod:prawda_vika",
+        "stream": true
+      }
+    ]
+  }
+}

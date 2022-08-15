@@ -9,6 +9,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sniklz.firstmod.block.ModBlocks;
 import net.sniklz.firstmod.item.ModItems;
+import net.sniklz.firstmod.sound.ModSounds;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -26,6 +27,7 @@ public class FirstMod
 
         ModItems.registerItems(eventBus);
         ModBlocks.registerBlocks(eventBus);
+        ModSounds.registerSounds(eventBus);
 
 
         eventBus.addListener(this::setup);
