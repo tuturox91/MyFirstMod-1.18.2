@@ -4,5 +4,10 @@
   "block.firstmod.vapatite_block": "Compressed Vapatit",
   "block.firstmod.vapatite_ore": "Vapatite Ore",
 
-  "itemGroup.firstmodtab": "Vapatite Mod"
+  "itemGroup.firstmodtab": "Vapatite Mod",
+
+  "item.firstmod.tested_sword": "Sword of the warrior I. Grinding",
+  "tested_sword_award": "Gods see you're victims and reward you"
+
+
 }

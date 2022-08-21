@@ -9,6 +9,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sniklz.firstmod.block.ModBlocks;
 import net.sniklz.firstmod.item.ModItems;
+import net.sniklz.firstmod.modRegistries.BlockRegister;
 import net.sniklz.firstmod.sound.ModSounds;
 import org.slf4j.Logger;
 
@@ -24,6 +25,8 @@ public class FirstMod
     {
         // Register the setup method for modloading
         IEventBus eventBus =  FMLJavaModLoadingContext.get().getModEventBus();
+
+
 
         ModItems.registerItems(eventBus);
         ModBlocks.registerBlocks(eventBus);
