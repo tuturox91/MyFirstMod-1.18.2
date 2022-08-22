@@ -1,27 +1,22 @@
 package net.sniklz.firstmod.events;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sniklz.firstmod.FirstMod;
-import net.sniklz.firstmod.armoretools.CustomSword;
 import net.sniklz.firstmod.item.ModItems;
 
 import java.util.Random;
 
 
 @Mod.EventBusSubscriber(modid = FirstMod.MOD_ID)
-public class ModEvents {
+public class CustomSwordEvent {
     private static int current_score = 0;
     private static double current_item_level;
 
