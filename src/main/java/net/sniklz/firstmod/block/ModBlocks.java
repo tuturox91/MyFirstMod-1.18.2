@@ -27,6 +27,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> VAPATITE_ORE = BlockRegister.registerBlock("vapatite_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.FIRSTMOD_TAB);
 
+    public static final RegistryObject<Block> VAPATITE_BLASTER = BlockRegister.registerBlock("vapatite_blaster",
+            () -> new BlasterBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.FIRSTMOD_TAB);
+
 
 
     public static void registerBlocks(IEventBus eventBus) {

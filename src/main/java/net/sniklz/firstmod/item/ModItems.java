@@ -1,12 +1,8 @@
 package net.sniklz.firstmod.item;
 
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sniklz.firstmod.FirstMod;
 import net.sniklz.firstmod.armoretools.CustomSword;
 import net.sniklz.firstmod.modRegistries.ItemRegister;
 import net.sniklz.firstmod.modRegistries.ModCreativeModeTab;
@@ -22,7 +18,7 @@ public class ModItems {
             ()-> new RecordItem(4, ModSounds.PRAWDA_VIKA, new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(1)));
 
     public static final RegistryObject<Item> TESTED_SWORD = ItemRegister.ITEMS.register("tested_sword",
-            ()-> new CustomSword(Tiers.DIAMOND,2,3f,new Item.Properties().tab(ModCreativeModeTab.FIRSTMOD_TAB)));
+            ()-> new CustomSword(Tiers.DIAMOND,2,2f,new Item.Properties().tab(ModCreativeModeTab.FIRSTMOD_TAB).setNoRepair()));
 
 
     public static void registerItems(IEventBus eventBus) {
