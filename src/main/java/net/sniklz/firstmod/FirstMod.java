@@ -15,6 +15,7 @@ import net.sniklz.firstmod.events.BlockLogBreak;
 import net.sniklz.firstmod.gui.ModMenuTypes;
 import net.sniklz.firstmod.gui.VapatiteBlasterScreen;
 import net.sniklz.firstmod.item.ModItems;
+import net.sniklz.firstmod.recipe.ModRecipes;
 import net.sniklz.firstmod.sound.ModSounds;
 import org.slf4j.Logger;
 
@@ -33,11 +34,14 @@ public class FirstMod
 
 
 
+
         ModItems.registerItems(eventBus);
         ModBlocks.registerBlocks(eventBus);
         ModBlockEntities.registerEntity(eventBus);
         ModSounds.registerSounds(eventBus);
         ModMenuTypes.registerMenu(eventBus);
+        ModRecipes.register(eventBus);
+
 
 
         eventBus.addListener(this::setup);

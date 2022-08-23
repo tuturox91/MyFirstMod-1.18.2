@@ -1,12 +1,10 @@
 package net.sniklz.firstmod.gui;
 
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -21,16 +19,18 @@ import org.jetbrains.annotations.Nullable;
 public class VapatiteBlasterMenu extends AbstractContainerMenu {
     private final VapatiteBlaster_BlockEntity blockEntity;
     private final Level level;
+    private final ContainerData data;
 
     public VapatiteBlasterMenu(int windowId, Inventory inv, FriendlyByteBuf extraData) {
-        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
+        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public VapatiteBlasterMenu(int windowId, Inventory inv, BlockEntity entity) {
+    public VapatiteBlasterMenu(int windowId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.VAPATITE_BLASTER_MENU.get(), windowId);
         checkContainerSize(inv, 4);
         blockEntity = ((VapatiteBlaster_BlockEntity) entity);
         this.level = inv.player.level;
+        this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
@@ -41,7 +41,45 @@ public class VapatiteBlasterMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 2, 66, 50));
             this.addSlot(new ModResultSlot(handler, 3, 114, 33));
         });
+
+        addDataSlots(data);
     }
+
+    public boolean isCrafting() {
+        return data.get(0) > 0;
+    }
+
+    public boolean hasFuel() {
+        return data.get(2) > 0;
+    }
+
+    public int getScaledPrgoress() {
+        int progress = this.data.get(0);
+        int maxProgress = this.data.get(1);
+        int progressArrowSize = 26;
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuelProgress() {
+        int fuelProgress = this.data.get(2);
+        int maxFuelProgress = this.data.get(3);
+        int fuelProgressSize = 14;
+
+        return  maxFuelProgress != 0 ? (int)(((float)fuelProgress/(float)maxFuelProgress) * fuelProgressSize) :0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
     // must assign a slot number to each of the slots used by the GUI.
