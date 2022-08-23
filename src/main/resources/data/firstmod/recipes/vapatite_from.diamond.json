@@ -1,0 +1,14 @@
+{
+  "type": "firstmod:vapatite_blasting",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "item": "firstmod:vapatite"
+  }
+}

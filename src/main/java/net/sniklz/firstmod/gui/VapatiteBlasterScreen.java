@@ -32,7 +32,7 @@ public class VapatiteBlasterScreen extends AbstractContainerScreen<VapatiteBlast
         this.blit(pPoseStack,x,y,0,0,imageWidth,imageHeight);
 
         if(menu.isCrafting()) {
-            blit(pPoseStack, x+84, y+22, 176,14,menu.getScaledPrgoress(), 16);
+            blit(pPoseStack, x+84, y+22, 176,14,menu.getScaledPrgoress(), 36);
         }
 
         if(menu.hasFuel()) {

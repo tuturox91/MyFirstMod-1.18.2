@@ -2,6 +2,7 @@ package net.sniklz.firstmod.recipe;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,7 +20,7 @@ public class ModRecipes {
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
-        Registry.register(Registry.RECIPE_TYPE, VapatiteBlasterRecipe.Type.ID, VapatiteBlasterRecipe.Type.INSTANCE);
+        //Registry.register(Registry.RECIPE_TYPE, VapatiteBlasterRecipe.Type.ID, VapatiteBlasterRecipe.Type.INSTANCE);
     }
 
 }

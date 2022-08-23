@@ -12,6 +12,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sniklz.firstmod.block.ModBlocks;
 import net.sniklz.firstmod.block.entity.ModBlockEntities;
 import net.sniklz.firstmod.events.BlockLogBreak;
+import net.sniklz.firstmod.events.ModEventsBusEvents;
 import net.sniklz.firstmod.gui.ModMenuTypes;
 import net.sniklz.firstmod.gui.VapatiteBlasterScreen;
 import net.sniklz.firstmod.item.ModItems;
@@ -37,9 +38,11 @@ public class FirstMod
 
         ModItems.registerItems(eventBus);
         ModBlocks.registerBlocks(eventBus);
-        ModBlockEntities.registerEntity(eventBus);
         ModSounds.registerSounds(eventBus);
+
+        ModBlockEntities.registerEntity(eventBus);
         ModMenuTypes.registerMenu(eventBus);
+
         ModRecipes.register(eventBus);
 
 
@@ -50,6 +53,7 @@ public class FirstMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new BlockLogBreak());
+        MinecraftForge.EVENT_BUS.register(new ModEventsBusEvents());
 
 
     }
