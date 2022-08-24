@@ -15,6 +15,11 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<VapatiteBlaster_BlockEntity>> VAPATITE_BLASTER = BLOCK_ENTITIES.register("vapatite_blaster",
             () -> BlockEntityType.Builder.of(VapatiteBlaster_BlockEntity::new, ModBlocks.VAPATITE_BLASTER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<AnimatedBlockEntity>> ANIMATED_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("animated_block_entity", () ->
+                    BlockEntityType.Builder.of(AnimatedBlockEntity::new,
+                            ModBlocks.ANIMATED_BLOCK.get()).build(null));
+
 
     public static void registerEntity(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

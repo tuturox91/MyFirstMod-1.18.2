@@ -7,5 +7,6 @@ import net.sniklz.firstmod.FirstMod;
 
 public class ItemRegister {
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FirstMod.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, FirstMod.MOD_ID);
 }
